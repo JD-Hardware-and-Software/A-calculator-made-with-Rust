@@ -1,2 +1,1 @@
-# A-calculator-made-with-Rust
-I spent all night working with this stupid language, and it made me enraged like when Goku transformed into a giant ape. Don't use Rust. 
+For the love of God don't use Rust, I am begging you. Over the 8 hours I spent making this, I have probably lost some hair despite not being genetically predisposed to male pattern baldness. Anyway, this does work, even on online compilers.
