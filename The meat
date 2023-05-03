@@ -1,0 +1,51 @@
+use std::io;
+
+fn main() {
+    println!("This is the Rust calculator, God help us!");
+
+    loop {
+        // Get user input for the two operands and operator
+        println!("Please enter the first number:");
+        let mut first_number = String::new();
+        io::stdin().read_line(&mut first_number).expect("Failed to read input.");
+
+        println!("Please enter the second number:");
+        let mut second_number = String::new();
+        io::stdin().read_line(&mut second_number).expect("Failed to read input.");
+
+        println!("Please enter the operator (+, -, *, /):");
+        let mut operator = String::new();
+        io::stdin().read_line(&mut operator).expect("Failed to read input.");
+
+        // Convert the input strings to numbers
+        let first_number: f64 = match first_number.trim().parse() {
+            Ok(num) => num,
+            Err(_) => {
+                println!("Invalid number. Please try again.");
+                continue;
+            }
+        };
+        let second_number: f64 = match second_number.trim().parse() {
+            Ok(num) => num,
+            Err(_) => {
+                println!("Invalid number. Please try again.");
+                continue;
+            }
+        };
+
+        // Perform the calculation based on the operator
+        let result = match operator.trim() {
+            "+" => first_number + second_number,
+            "-" => first_number - second_number,
+            "*" => first_number * second_number,
+            "/" => first_number / second_number,
+            _ => {
+                println!("Invalid operator.");
+                continue;
+            }
+        };
+
+        // Print the result
+        println!("The result is: {}", result);
+    }
+}
